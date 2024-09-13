@@ -1,8 +1,7 @@
-.Sidebar {
+.side-bar {
     height: calc(100vh - 50px);
     width: var(--sidebar-width);
     background-color: var(--inverted-bg-color);
-
     position: relative;
     transition: width 0.3s;
 }
