@@ -1,3 +1,5 @@
+import path from 'path';
+
 export default {
     clearMocks: true,
     coveragePathIgnorePatterns: [
@@ -18,11 +20,14 @@ export default {
         'node',
     ],
     rootDir: '../../',
+    setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
     testEnvironment: 'jsdom',
     testMatch: [
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
     moduleNameMapper: {
+        '\\.svg$': '<rootDir>/config/jest/jestEmptyComponent.tsx',
         '^@/(.*)$': '<rootDir>/src/$1',
+        '\\.(s?css)$': 'identity-obj-proxy',
     },
 };
