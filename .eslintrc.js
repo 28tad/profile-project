@@ -47,6 +47,7 @@ module.exports = {
         'max-len': ['error', { ignoreComments: true, code: 100 }],
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'warn',
+        'no-param-reassign': 'off',
     },
     globals: {
         __IS_DEV__: true,

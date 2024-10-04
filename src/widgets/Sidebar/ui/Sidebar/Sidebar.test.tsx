@@ -1,9 +1,6 @@
 import React from 'react';
 import { screen, fireEvent } from '@testing-library/react';
 import { Sidebar } from './Sidebar';
-import {
-    renderWithTranslation,
-} from '@/shared/lib/tests/renderWithTranslation/renderWithTranslation';
 import { componentRender } from '@/shared/lib/tests/componentRender';
 
 describe('Sidebar', () => {

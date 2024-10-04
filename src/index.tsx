@@ -5,14 +5,17 @@ import { ThemePorvider } from '@/app/providers/ThemeProvider';
 import { ErrorBoundary } from './app/providers/ErrorBoundary';
 import '@/app/styles/index.scss';
 import '@/shared/config/i18n/i18n';
+import { StoreProvider } from './app/providers/StoreProvider';
 
 render(
-    <BrowserRouter>
-        <ErrorBoundary>
-            <ThemePorvider>
-                <App />
-            </ThemePorvider>
-        </ErrorBoundary>
-    </BrowserRouter>,
+    <StoreProvider>
+        <BrowserRouter>
+            <ErrorBoundary>
+                <ThemePorvider>
+                    <App />
+                </ThemePorvider>
+            </ErrorBoundary>
+        </BrowserRouter>
+    </StoreProvider>,
     document.getElementById('root'),
 );

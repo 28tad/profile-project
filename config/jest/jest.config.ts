@@ -1,5 +1,3 @@
-import path from 'path';
-
 export default {
     clearMocks: true,
     coveragePathIgnorePatterns: [
@@ -29,5 +27,8 @@ export default {
         '\\.svg$': '<rootDir>/config/jest/jestEmptyComponent.tsx',
         '^@/(.*)$': '<rootDir>/src/$1',
         '\\.(s?css)$': 'identity-obj-proxy',
+    },
+    globals: {
+        __IS_DEV__: true,
     },
 };
