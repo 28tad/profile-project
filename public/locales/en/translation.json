@@ -6,5 +6,8 @@
     "О cайте": "About",
     "Страница не найдена": "Page not found",
     "Логин": "Login",
-    "Пароль": "Password"
+    "Пароль": "Password",
+    "Войти": "Login",
+    "Форма авторизации": "Authorization form",
+    "Неверный логин или пароль": "Invalid username or password"
 }

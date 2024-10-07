@@ -62,6 +62,7 @@ export const Modal = (props: ModalProps) => {
 
         return () => {
             clearTimeout(timerRef.current);
+            window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen, onKeyDown]);
 

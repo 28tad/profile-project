@@ -49,6 +49,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'warn',
         'no-param-reassign': 'off',
         'arrow-body-style': 'off',
+        'max-len': '120',
     },
     globals: {
         __IS_DEV__: true,
