@@ -42,14 +42,13 @@ module.exports = {
         'jsx-a11y/click-events-have-key-events': 'off',
         'i18next/no-literal-string': [
             'error',
-            { markupOnly: true, ignoreAttribute: ['to', 'fallback', 'data-testid'] },
+            { markupOnly: true, ignoreAttribute: ['to', 'fallback', 'data-testid', 'name'] },
         ],
-        'max-len': ['error', { ignoreComments: true, code: 100 }],
+        'max-len': ['error', { ignoreComments: true, code: 120 }],
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'warn',
         'no-param-reassign': 'off',
         'arrow-body-style': 'off',
-        'max-len': '120',
     },
     globals: {
         __IS_DEV__: true,

@@ -9,5 +9,5 @@ export {
 } from './model/types/user';
 
 export {
-    getUserAuthData
+    getUserAuthData,
 } from './model/selectors/getUserAuthData/getUserAuthData';
