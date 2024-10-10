@@ -25,6 +25,15 @@
         "password": "123"
       }
     ],
-    "profile": { "name": "typicode" }
+    "profile": { 
+      "firs": "Спайк",
+      "lastname": "Шпигель",
+      "age": 27,
+      "currency": "Woolong",
+      "Planet": "Mars",
+      "City": "Unknow",
+      "username": "admin",
+      "avatar": "https://i.ebayimg.com/images/g/JzgAAOSwA8BkOeBK/s-l1200.jpg"
+     }
   }
   

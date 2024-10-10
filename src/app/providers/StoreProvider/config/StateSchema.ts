@@ -4,6 +4,7 @@ import {
 import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
 import { LoginSchema } from '@/features/AuthByUsername';
+import { ProfileSchema } from '@/entities/Profile';
 
 export interface StateSchema {
     counter: CounterSchema,
@@ -11,6 +12,7 @@ export interface StateSchema {
 
     // Async reducers
     loginForm?: LoginSchema,
+    profile?: ProfileSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;
