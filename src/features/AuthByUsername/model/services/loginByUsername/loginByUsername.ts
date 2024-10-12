@@ -27,7 +27,8 @@ export const loginByUsername = createAsyncThunk<
 
             return response.data;
         } catch (e) {
-            return rejectWithValue(e as string);
+            // @ts-ignore
+            return rejectWithValue(e);
         }
     },
 );
