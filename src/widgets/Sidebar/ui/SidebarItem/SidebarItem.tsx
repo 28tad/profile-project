@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
 import cls from './SidebarItem.module.scss';
 import { SidebarItemType } from '../../model/items';
@@ -11,7 +10,15 @@ export interface SidebarItemProps {
     collapsed: boolean;
 }
 
-export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
+export const SidebarItem = memo((props: SidebarItemProps) => {
+    const {
+        item = {
+            path: '',
+            text: '',
+            Icon: '',
+        },
+        collapsed,
+    } = props;
     const { t } = useTranslation();
 
     return (
