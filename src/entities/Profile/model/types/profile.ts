@@ -1,7 +1,7 @@
 import { Currency, Planet } from '@/shared/const/common';
 
 export type Profile = {
-    firs: string;
+    first: string;
     lastname: string;
     age: number;
     currency: Currency;
