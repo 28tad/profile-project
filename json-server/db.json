@@ -1,39 +1,40 @@
 {
-    "posts": [
-      {
-        "id": "1",
-        "title": "json-server",
-        "userId": "1"
-      },
-      {
-        "id": "2",
-        "title": "json-server",
-        "userId": "2"
-      }
-    ],
-    "comments": [
-      {
-        "id": "1",
-        "body": "some comment",
-        "postId": "1"
-      }
-    ],
-    "users": [
-      {
-        "id": "1",
-        "username": "admin",
-        "password": "123"
-      }
-    ],
-    "profile": { 
-      "first": "Спайк",
-      "lastname": "Шпигель",
-      "age": 27,
-      "currency": "Woolong",
-      "Planet": "Mars",
-      "City": "Unknow",
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "json-server",
+      "userId": "2"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
       "username": "admin",
-      "avatar": "https://i.ebayimg.com/images/g/JzgAAOSwA8BkOeBK/s-l1200.jpg"
-     }
+      "password": "123"
+    }
+  ],
+  "profile": {
+    "first": "Шляндра",
+    "lastname": "Спуки",
+    "age": "22",
+    "currency": "RUB",
+    "Planet": "Mars",
+    "City": "Unknow",
+    "username": "admin1",
+    "avatar": "https://i.ebayimg.com/images/g/JzgAAOSwA8BkOeBK/s-l1200.jpg",
+    "city": "Махачкала",
+    "country": "United States"
   }
-  
+}
