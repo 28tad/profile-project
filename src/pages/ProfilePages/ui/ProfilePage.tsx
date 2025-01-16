@@ -1,5 +1,6 @@
 import { useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
 import {
@@ -8,11 +9,16 @@ import {
     getProfileIsLoading, profileActions,
     ProfileCard, profileReducer,
 } from '@/entities/Profile';
+import {
+    getProfileValidateErrors,
+} from '@/entities/Profile/model/selectors/getProfileValidateError/getProfileValidateError';
+import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/uesAppDispatch';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { getProfileReadOnly } from '@/entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency/model/types';
+import { ValidateProfileError } from '@/entities/Profile/model/types/profile';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -24,6 +30,16 @@ const ProfilePage = () => {
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const readOnly = useSelector(getProfileReadOnly);
+    const validateErros = useSelector(getProfileValidateErrors);
+    const { t } = useTranslation();
+
+    const validateErrorTranslated = {
+        [ValidateProfileError.INCORRECT_AGE]: t('Некорректный возраст'),
+        [ValidateProfileError.INCORRECT_COUNTRY]: t('Некотректный регион'),
+        [ValidateProfileError.INCORRECT_USER_DATA]: t('Данные не указаны'),
+        [ValidateProfileError.NO_DATA]: t('Имя и фамилия обязательны'),
+        [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
+    };
 
     useEffect(() => {
         dispatch(fetchProfileData());
@@ -38,8 +54,7 @@ const ProfilePage = () => {
     }, [dispatch]);
 
     const onChangeAge = useCallback((value?: string) => {
-        const numericValue = value?.replace(/\D/g, '') || '';
-        dispatch(profileActions.updateProfile({ age: numericValue }));
+        dispatch(profileActions.updateProfile({ age: value }));
     }, [dispatch]);
 
     const onChangeCity = useCallback((value?: string) => {
@@ -66,6 +81,15 @@ const ProfilePage = () => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames('')}>
                 <ProfilePageHeader />
+                {
+                    validateErros?.length && validateErros.map((err) => (
+                        <Text
+                            key={err}
+                            theme={TextTheme.ERROR}
+                            text={validateErrorTranslated[err]}
+                        />
+                    ))
+                }
                 <ProfileCard
                     data={formData}
                     isLoading={isLoading}
